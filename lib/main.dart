@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/buildFeatureItem.dart';
 
 void main() {
   runApp(MyApp());
@@ -38,29 +39,29 @@ class WelcomeScreen extends StatelessWidget {
               Expanded(
                 child: ListView(
                   children: [
-                    _buildFeatureItem(
-                      icon: Icons.alarm,
+                    FeatureItem(
+                      icon: Icons.camera,
                       color: Colors.green,
                       title: 'Quick Creation',
                       description: 'Simply type in your list, ask Siri, or add a reminder from your Calendar app.',
                     ),
-                    _buildFeatureItem(
+                    FeatureItem(
                       icon: Icons.shopping_cart,
                       color: Colors.orange,
                       title: 'Grocery Shopping',
                       description: 'Create a Grocery List that automatically sorts items you add by category.',
                     ),
-                    _buildFeatureItem(
+                    FeatureItem(
                       icon: Icons.group,
                       color: Colors.yellow,
                       title: 'Easy Sharing',
                       description: 'Collaborate on a list, and even assign individual tasks.',
                     ),
-                    _buildFeatureItem(
+                    FeatureItem(
                       icon: Icons.dashboard,
                       color: Colors.blue,
                       title: 'Powerful Organization',
-                      description: 'Create new lists to match your needs, categorize reminders with tags, and manage reminders around your workflow with Smart Lists.',
+                      description: 'Create new lists to match your needs, categorize reminders with tags, and manage reminders around your work flow with Smart Lists.',
                     ),
                   ],
                 ),
@@ -90,46 +91,6 @@ class WelcomeScreen extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
-
-  Widget _buildFeatureItem({
-    required IconData icon,
-    required Color color,
-    required String title,
-    required String description,
-  }) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10.0),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Icon(icon, color: color, size: 40),
-          SizedBox(width: 14),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(height: 6),
-                Text(
-                  description,
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.black54,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
       ),
     );
   }
